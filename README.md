@@ -1,2 +1,2 @@
-# microservice-admin-view
-Repository for Microservices Admin Server
+# microservice-admin-server-view
+Repository for Microservices Admin Server View
