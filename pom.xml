@@ -14,7 +14,7 @@
 	<artifactId>microservices-admin-server-view</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Microservice Admin Server View</name>
+	<name>microservices-admin-server-view</name>
 	<description>Project for Microservices Admin Server View</description>
 
 	<properties>

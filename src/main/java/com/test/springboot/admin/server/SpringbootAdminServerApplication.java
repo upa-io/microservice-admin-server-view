@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringbootAdminServerApplication {
 
 	public static void main(String[] args) {
-		log.info("Inciando aplicacion Microservice-admin-server-view");
+		log.info("Inciando aplicacion microservices-admin-server-view");
 
 		SpringApplication.run(SpringbootAdminServerApplication.class, args);
 	}
