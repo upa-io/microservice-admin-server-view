@@ -1,4 +1,4 @@
-package com.test.springboot.admin.server;
+package com.poc.admin.server.rest.api;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import lombok.extern.slf4j.Slf4j;

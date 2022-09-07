@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>com.upaio.monitoring</groupId>
-	<artifactId>microservices-admin-server-view</artifactId>
+	<artifactId>microservices-admin-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>microservices-admin-server-view</name>
