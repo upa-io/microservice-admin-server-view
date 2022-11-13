@@ -1,33 +1,48 @@
 Configuration:
   status: debug
-
+  Properties:
+    property:
+      - name: log-path
+        value: /var/log
   appenders:
     Console:
       name: LogToConsole
       PatternLayout:
-        Pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
-
+        Pattern: "%sn %d{yyyy/MM/dd HH:mm:ss,SSS} %r [%-6p] [%t] %c{3} %C{3}.%M(%F:%L) - %m%n"
     RollingFile:
       - name: LogToRollingFile
-        fileName: rest-api-admin-server.log
-        filePattern: "$${date:yyyy-MM}/rest-api-admin-server-%d{MM-dd-yyyy}-%i.log.gz"
+        fileName: ${log-path}/admin-rest-api.log
+        filePattern: "${log-path}/admin-rest-api_%d{yyyy-MM-dd}.log"
         PatternLayout:
-          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+          pattern: "%sn %d{yyyy/MM/dd HH:mm:ss,SSS} %r [%-6p] [%t] %c{3} %C{3}.%M(%F:%L) - %m%n"
         Policies:
+          TimeBasedTriggeringPolicy:
+            interval: 1
+            modulate: true
           SizeBasedTriggeringPolicy:
             size: 10MB
         DefaultRollOverStrategy:
           max: 10
-
   Loggers:
     logger:
-      - name: com.test
+      - name: com.poc.admin.server.rest.api
         level: info
         additivity: false
         AppenderRef:
           - ref: LogToConsole
           - ref: LogToRollingFile
-
+      - name: org.springframework.boot
+        level: info
+        additivity: false
+        AppenderRef:
+          - ref: LogToConsole
+          - ref: LogToRollingFile
+          - name: org.springframework.boot
+            level: debug
+            additivity: false
+            AppenderRef:
+              - ref: LogToConsole
+              - ref: LogToRollingFile
     Root:
       level: error
       AppenderRef:

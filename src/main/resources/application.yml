@@ -1,9 +1,7 @@
 server:
-  port: 8082
+  port: 8001
   servlet:
     context-path: /rest-api-admin-server
-  application:
-    name: rest-api-admin-server
 management:
   endpoints:
     web:
@@ -12,3 +10,8 @@ management:
   endpoint:
     health:
       show-details: always
+spring:
+  application:
+    name: rest-api-admin-server
+  jmx:
+    default-domain: /rest-api-admin-server
